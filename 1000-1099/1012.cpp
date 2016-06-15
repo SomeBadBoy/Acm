@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <iostream>
+#include <iomanip>
 using namespace std;
 int factorial(int n) {
 	if(n == 0) {
@@ -12,7 +13,11 @@ int factorial(int n) {
 	return last;
 }
 void printResult(int n, double result) {
-	printf("%d %.10g\n", n, result);
+	if(n <= 3) {
+		printf("%d %.10g\n", n, result);
+	} else{
+		cout<<n<<" "<<fixed<<setprecision(9)<<result<<endl;  
+	}
 }
 double func(int n) {
 	double result = 0;
